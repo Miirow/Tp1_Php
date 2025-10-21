@@ -151,13 +151,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php if (!empty($errors)): ?>
         <ul>
             <?php foreach ($errors as $error): ?>
-                <li><?php echo htmlspecialchars($error) ?></li>
+                <li><?php echo ($error) ?></li>
             <?php endforeach; ?>
         </ul>
     <?php endif; ?>
     
     <?php if (isset($success)): ?>
-        <p><?php echo htmlspecialchars($success) ?></p>
+        <p><?php echo ($success) ?></p>
     <?php endif; ?>
     
 
@@ -191,31 +191,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </body>
 </html>
 
+
 <style>
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    min-height: 100vh;
-    
     display: flex;
-    justify-content: flex-start; /* pour coller en haut */
-    align-items: center; /* centre horizontalement */
-    flex-direction: column; /* empile verticalement */
-    padding-top: 40px; /* espace en haut, tu peux ajuster */
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 40px;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 350px; /* fixe largeur égale au formulaire */
+    width: 350px; 
 }
 
 h1 {
     margin-bottom: 20px;
     color: #333;
-    width: 100%;
     text-align: center;
 }
 
@@ -224,10 +222,10 @@ form {
     padding: 30px 40px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    width: 350px; /* largeur fixe */
-    max-width: 90vw; /* largeur max sur petits écrans */
-    margin: 0 auto; /* centre horizontalement */
-    box-sizing: border-box; /* inclut padding dans la largeur */
+    width: 350px;
+    max-width: 90vw;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 
@@ -267,6 +265,4 @@ ul {
     width: 100%;
     text-align: center;
 }
-
-
 </style>
